@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Box</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            padding: 200px;
+            background-color: #cfd5dd;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .container {
+            background: black;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: red;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+            resize: none;
+            border: 1px solid #000;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .counter {
+            margin-top: 10px;
+            font-size: 14px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Message (max 200 characters)</h2>
+        <textarea id="messageBox" maxlength="200" placeholder="Type your Message..."></textarea>
+        <div class="counter"><span id="charCount">0</span> / 200 characters</div>
+    </div>
+
+    <script>
+        var textarea = document.getElementById('messageBox')
+         charCount = document.getElementById('charCount')
+
+        textarea.addEventListener('input',function(){
+            charCount.textContent = textarea.value.length
+        })
+    </script>
+</body>
+</html>
